@@ -1,0 +1,53 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30114.105
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{74102BAE-73B7-4D4E-98A8-D72C5D342621}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{FF45861F-1E8B-47B0-8375-388354165AA2}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{BCAFADE7-BD8B-4C4C-802E-7D3C85486659}"
+	ProjectSection(SolutionItems) = preProject
+		README.md = README.md
+	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Younited.HealthCheck.EntityFrameworkMigrations", "src\Younited.HealthCheck.EntityFrameworkMigrations\Younited.HealthCheck.EntityFrameworkMigrations.csproj", "{FA13063A-E1DA-445B-9399-085F7E6A5760}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Younited.HealthCheck.EntityFrameworkMigrations.Tests", "tests\Younited.HealthCheck.EntityFrameworkMigrations.Tests\Younited.HealthCheck.EntityFrameworkMigrations.Tests.csproj", "{90E8AB8D-FD50-4C9C-8899-F74A973F9472}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "samples", "samples", "{546A6358-4D8C-4EDE-8361-D1C08E9EAB87}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Younited.HealthCheck.EntityFrameworkMigrations.Sample", "samples\Younited.HealthCheck.EntityFrameworkMigrations.Sample\Younited.HealthCheck.EntityFrameworkMigrations.Sample.csproj", "{674C64CB-706E-4EC9-8163-700CCD5DB4E4}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FA13063A-E1DA-445B-9399-085F7E6A5760}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FA13063A-E1DA-445B-9399-085F7E6A5760}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FA13063A-E1DA-445B-9399-085F7E6A5760}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FA13063A-E1DA-445B-9399-085F7E6A5760}.Release|Any CPU.Build.0 = Release|Any CPU
+		{90E8AB8D-FD50-4C9C-8899-F74A973F9472}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{90E8AB8D-FD50-4C9C-8899-F74A973F9472}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{90E8AB8D-FD50-4C9C-8899-F74A973F9472}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{90E8AB8D-FD50-4C9C-8899-F74A973F9472}.Release|Any CPU.Build.0 = Release|Any CPU
+		{674C64CB-706E-4EC9-8163-700CCD5DB4E4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{674C64CB-706E-4EC9-8163-700CCD5DB4E4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{674C64CB-706E-4EC9-8163-700CCD5DB4E4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{674C64CB-706E-4EC9-8163-700CCD5DB4E4}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{FA13063A-E1DA-445B-9399-085F7E6A5760} = {74102BAE-73B7-4D4E-98A8-D72C5D342621}
+		{90E8AB8D-FD50-4C9C-8899-F74A973F9472} = {FF45861F-1E8B-47B0-8375-388354165AA2}
+		{674C64CB-706E-4EC9-8163-700CCD5DB4E4} = {546A6358-4D8C-4EDE-8361-D1C08E9EAB87}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E7C5E2D6-FE27-42EE-9025-DC6EEC668E1A}
+	EndGlobalSection
+EndGlobal

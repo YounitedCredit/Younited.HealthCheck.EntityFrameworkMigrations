@@ -1,0 +1,22 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <Authors>Guillaume GUERRA</Authors>
+    <Company>Younited</Company>
+    <Description>Add a validation that all Entity Framework migrations have been executed, for a given DbContext, to a webapi healtchchecks collection.</Description>
+    <Copyright>Copyright @ Younited Credit</Copyright>
+    <PackageIconUrl>https://github.com/YounitedCredit/Younited.MassTransit.Trigger/blob/master/build/younited.png</PackageIconUrl>
+    <RepositoryType>git</RepositoryType>
+    <RepositoryUrl>https://github.com/YounitedCredit/Younited.MassTransit.Trigger</RepositoryUrl>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.1.4" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="3.1.4" />
+    <PackageReference Include="Microsoft.Extensions.Diagnostics.HealthChecks" Version="3.1.4" />
+  </ItemGroup>
+
+</Project>

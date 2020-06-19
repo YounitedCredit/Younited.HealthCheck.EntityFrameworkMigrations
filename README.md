@@ -1,6 +1,6 @@
-# Younited Credit Entity Framework healthcheck library
+# Younited Credit netcore Entity Framework healthcheck library
 
-The purpose of this project is to add a validation that all Entity Framework migrations have been executed, for a given DbContext, to the list of webapi healtchchecks collection
+The purpose of this project is to add a validation that all Entity Framework core migrations have been executed, for a given DbContext, to the list of webapi healtchchecks collection
 
 # Getting Started
 1. Setup health checks for your webapp, as explained in this [article](https://docs.microsoft.com/en-us/aspnet/core/host-and-deploy/health-checks?view=aspnetcore-3.1)
@@ -48,3 +48,8 @@ Once the setup is done, you shall receive missing migrations as part of the heal
     }
 }
 ```
+
+# Code of conduct
+This project adheres to the Contributor Covenant code of conduct. By participating, you are expected to uphold this code. Please report unacceptable behavior to oss@younited-credit.com.
+
+[![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-v2.0%20adopted-ff69b4.svg)](code_of_conduct.md)

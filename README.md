@@ -1,6 +1,6 @@
 # Younited Credit netcore Entity Framework healthcheck library
 
-The purpose of this project is to add a validation that all Entity Framework core migrations have been executed, for a given DbContext, to the list of webapi healtchchecks collection
+The purpose of this project is to add a validation that all Entity Framework core migrations have been executed, for a given DbContext, to the list of webapi healthchecks collection
 
 # Getting Started
 1. Setup health checks for your webapp, as explained in this [article](https://docs.microsoft.com/en-us/aspnet/core/host-and-deploy/health-checks?view=aspnetcore-3.1)

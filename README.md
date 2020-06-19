@@ -26,7 +26,6 @@ Once the setup is done, you shall receive missing migrations as part of the heal
     "totalDuration": "00:00:05.9933318",
     "entries": {
         
-        // List of missing migrations, if any
         "SampleDbContextMigrationsHealthCheck": {
             "data": {
                 "MissingMigrations": [
@@ -38,7 +37,6 @@ Once the setup is done, you shall receive missing migrations as part of the heal
             "status": "Unhealthy"
         },
 
-        // Other health checks results
         "PingHealthChecker": {
             "data": {},
             "description": "Ping Check",
@@ -52,4 +50,4 @@ Once the setup is done, you shall receive missing migrations as part of the heal
 # Code of conduct
 This project adheres to the Contributor Covenant code of conduct. By participating, you are expected to uphold this code. Please report unacceptable behavior to oss@younited-credit.com.
 
-[![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-v2.0%20adopted-ff69b4.svg)](code_of_conduct.md)
+[![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-v2.0%20adopted-ff69b4.svg)](CODE_OF_CONDUCT.md)

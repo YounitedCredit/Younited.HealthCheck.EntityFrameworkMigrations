@@ -5,7 +5,7 @@ The purpose of this project is to add a validation that all Entity Framework cor
 # Getting Started
 1. Setup health checks for your webapp, as explained in this [article](https://docs.microsoft.com/en-us/aspnet/core/host-and-deploy/health-checks?view=aspnetcore-3.1)
 
-2. Add reference to the **Younited.HealthCheck.EntityFrameworkMigrations** nuget to your webapp project
+2. Add reference to the **[Younited.HealthCheck.EntityFrameworkMigrations](https://www.nuget.org/packages/Younited.HealthCheck.EntityFrameworkMigrations/1.0.0)** nuget to your webapp project
 
 3. Publish a health check for your EntityFramework DbContext
 ```cs

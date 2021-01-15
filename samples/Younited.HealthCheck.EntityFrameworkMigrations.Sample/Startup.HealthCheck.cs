@@ -14,6 +14,7 @@ namespace Younited.HealthCheck.EntityFrameworkMigrations.Sample
         private void ConfigureHealthCheck(IServiceCollection services)
         {
             services.AddHealthChecks()
+                .AddDbContextCheck<SampleDbContext>()
                 .AddEntityFrameworkMigrationsCheck<SampleDbContext>() // Registers required services and check the pipeline
 
                 // And all the other checks you may need for your app

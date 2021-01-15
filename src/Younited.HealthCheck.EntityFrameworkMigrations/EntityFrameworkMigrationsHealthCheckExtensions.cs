@@ -18,7 +18,7 @@ namespace Younited.HealthCheck.EntityFrameworkMigrations
             where TContext : DbContext
         {
             // PendingMigrationsCheckerStorage is registered as a singleton, to provide persistent memory and remember whether last check was successful or not
-            builder.Services.TryAddSingleton<IEntityFrameworkPendingMigrationsCheckerStorage, EntityFrameworkPendingMigrationsCheckerStorage>();
+            builder.Services.TryAddSingleton<IEntityFrameworkPendingMigrationsCheckerStorage<TContext>, EntityFrameworkPendingMigrationsCheckerStorage<TContext>>();
 
             // the scope created here will be disposed by the parent scope
             // todo fix when issue is resolved https://github.com/dotnet/aspnetcore/issues/14453

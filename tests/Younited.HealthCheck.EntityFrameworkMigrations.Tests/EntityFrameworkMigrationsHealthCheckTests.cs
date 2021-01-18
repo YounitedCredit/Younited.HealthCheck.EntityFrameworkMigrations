@@ -17,7 +17,7 @@ namespace Younited.HealthCheck.EntityFrameworkMigrations.Tests
             var cancellationToken = CancellationToken.None;
 
             var migrationsChecker = Substitute.For<IEntityFrameworkPendingMigrationsChecker<DbContext>>();
-            var check = new EntityFrameworkMigrationsHealthCheck<DbContext>(migrationsChecker, new EntityFrameworkPendingMigrationsCheckerStorage());
+            var check = new EntityFrameworkMigrationsHealthCheck<DbContext>(migrationsChecker, new EntityFrameworkPendingMigrationsCheckerStorage<DbContext>());
 
             // The checker confirms that no migration is missing : it returns an empty list
             migrationsChecker.GetPendingMigrationsAsync(cancellationToken).Returns(new string[0]);
@@ -35,7 +35,7 @@ namespace Younited.HealthCheck.EntityFrameworkMigrations.Tests
             var cancellationToken = CancellationToken.None;
 
             var migrationsChecker = Substitute.For<IEntityFrameworkPendingMigrationsChecker<DbContext>>();
-            var check = new EntityFrameworkMigrationsHealthCheck<DbContext>(migrationsChecker, new EntityFrameworkPendingMigrationsCheckerStorage());
+            var check = new EntityFrameworkMigrationsHealthCheck<DbContext>(migrationsChecker, new EntityFrameworkPendingMigrationsCheckerStorage<DbContext>());
 
             // The checker identifies two missing migrations
             var missingMigrations = new[] { "MissingMigration1", "MissingMigration2" };
@@ -55,7 +55,7 @@ namespace Younited.HealthCheck.EntityFrameworkMigrations.Tests
         [Test]
         public async Task Missing_migrations_should_be_checked_each_time_until_no_missing_migration_is_found()
         {
-            var storageSingleton = new EntityFrameworkPendingMigrationsCheckerStorage();
+            var storageSingleton = new EntityFrameworkPendingMigrationsCheckerStorage<DbContext>();
             var cancellationToken = CancellationToken.None;
             var expectedMigrations = new List<string>() { "migration1", "migration2" };
 

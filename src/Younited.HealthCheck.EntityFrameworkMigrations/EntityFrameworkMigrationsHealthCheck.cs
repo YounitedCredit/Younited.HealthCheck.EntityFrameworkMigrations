@@ -19,9 +19,9 @@ namespace Younited.HealthCheck.EntityFrameworkMigrations
         private const string ErrorStatusDescription = "{0} migrations were not executed on the DB";
 
         private readonly IEntityFrameworkPendingMigrationsChecker<TContext> _checker;
-        private readonly IEntityFrameworkPendingMigrationsCheckerStorage _storage;
+        private readonly IEntityFrameworkPendingMigrationsCheckerStorage<TContext> _storage;
 
-        public EntityFrameworkMigrationsHealthCheck(IEntityFrameworkPendingMigrationsChecker<TContext> checker, IEntityFrameworkPendingMigrationsCheckerStorage storage)
+        public EntityFrameworkMigrationsHealthCheck(IEntityFrameworkPendingMigrationsChecker<TContext> checker, IEntityFrameworkPendingMigrationsCheckerStorage<TContext> storage)
         {
             _checker = checker;
             _storage = storage;

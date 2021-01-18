@@ -25,11 +25,13 @@ namespace Younited.HealthCheck.EntityFrameworkMigrations.Sample
 
         private void AddHealthChecksUi(IServiceCollection services)
         {
-            services.AddHealthChecksUI(setupSettings: settings =>
-            {
-                settings.AddHealthCheckEndpoint("Sample WebApp", $"https://localhost:5001/health");
-                settings.SetEvaluationTimeInSeconds(10);
-            });
+            services
+                .AddHealthChecksUI(settings =>
+                {
+                    settings.AddHealthCheckEndpoint("Sample WebApp", $"https://localhost:5001/health");
+                    settings.SetEvaluationTimeInSeconds(10);
+                })
+                .AddInMemoryStorage();
         }
 
         private void MapAndUseHealthChecksUi(IApplicationBuilder app)

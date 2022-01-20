@@ -47,7 +47,7 @@ namespace Younited.HealthCheck.EntityFrameworkMigrations.Tests
             var checker = new EntityFrameworkPendingMigrationsChecker<SampleDbContext>(_context);
 
             // Run all the migrations, so that DB is up to date
-            _context.Database.Migrate();
+            await _context.Database.MigrateAsync();
 
             var result = (await checker.GetPendingMigrationsAsync(CancellationToken.None)).ToList();
             

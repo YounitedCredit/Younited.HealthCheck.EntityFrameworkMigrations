@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Threading;
 using System.Threading.Tasks;
@@ -20,7 +21,7 @@ namespace Younited.HealthCheck.EntityFrameworkMigrations.Tests
             var check = new EntityFrameworkMigrationsHealthCheck<DbContext>(migrationsChecker, new EntityFrameworkPendingMigrationsCheckerStorage<DbContext>());
 
             // The checker confirms that no migration is missing : it returns an empty list
-            migrationsChecker.GetPendingMigrationsAsync(cancellationToken).Returns(new string[0]);
+            migrationsChecker.GetPendingMigrationsAsync(cancellationToken).Returns(Array.Empty<string>());
 
             var result = await check.CheckHealthAsync(new HealthCheckContext(), cancellationToken);
 
@@ -82,7 +83,7 @@ namespace Younited.HealthCheck.EntityFrameworkMigrations.Tests
 
             // Now the migration checker behaves as if all the migrations were executed
             migrationsChecker.ClearSubstitute();
-            migrationsChecker.GetPendingMigrationsAsync(cancellationToken).Returns(new string[0]);
+            migrationsChecker.GetPendingMigrationsAsync(cancellationToken).Returns(Array.Empty<string>());
 
             // the status reported by the check is now healthy
             var healthyResult = await check.CheckHealthAsync(new HealthCheckContext(), cancellationToken);

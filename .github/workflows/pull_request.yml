@@ -1,0 +1,33 @@
+name: Check pull request
+
+on:  
+  pull_request:
+    branches:
+      - main
+
+env:
+  BUILD_CONFIGURATION: 'Release'    # set this to the appropriate build configuration
+  DOTNET_VERSION: '7.x' 
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      # Checkout the repo
+      - uses: actions/checkout@v2
+
+      # Setup .NET Core SDK
+      - name: Setup .NET Core
+        uses: actions/setup-dotnet@v1
+        with:
+          dotnet-version: ${{ env.DOTNET_VERSION }}
+
+      # Run dotnet build and package
+      - name: dotnet restore
+        run: dotnet restore
+          
+      - name: dotnet build
+        run: dotnet build --configuration '${{ env.BUILD_CONFIGURATION }}'
+
+      - name: dotnet test
+        run: dotnet test --configuration '${{ env.BUILD_CONFIGURATION }}'

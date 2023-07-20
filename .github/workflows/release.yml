@@ -11,7 +11,7 @@ env:
 
 jobs:
   build:
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
     steps:
       # Checkout the repo
       - uses: actions/checkout@v3
@@ -36,7 +36,7 @@ jobs:
 
   az-artifacts-build-and-deploy:
     needs: build
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
     steps:
       # Checkout the repo
       - uses: actions/checkout@v3

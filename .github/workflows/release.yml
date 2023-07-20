@@ -64,4 +64,4 @@ jobs:
 
       # Publish the package to Azure Artifacts
       - name: 'dotnet publish'
-        run: dotnet nuget push bin/${{ env.BUILD_CONFIGURATION }}/*.nupkg --api-key ${{ secrets.nuget_api_key }} 
+        run: dotnet nuget push bin/${{ env.BUILD_CONFIGURATION }}/Younited.HealthCheck.EntityFrameworkMigrations*.nupkg --api-key ${{ secrets.nuget_api_key }} --source https://api.nuget.org/v3/index.json

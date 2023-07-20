@@ -12,7 +12,6 @@
     <RepositoryUrl>https://github.com/YounitedCredit/Younited.HealthCheck.EntityFrameworkMigrations</RepositoryUrl>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageId>Younited.HealthCheck.EntityFrameworkMigrations</PackageId>
-    <Version>5.0.2</Version>
     <Title>Younited.HealthCheck.EntityFrameworkMigrations</Title>
     <PackageTags>Healthcheck;EntityFramework;EF;EFCore;netcore</PackageTags>
     <PackageIcon>younited.png</PackageIcon>
@@ -28,6 +27,13 @@
 	<PackageReference Include="Microsoft.EntityFrameworkCore" Version="7.0.9" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="7.0.9" />
     <PackageReference Include="Microsoft.Extensions.Diagnostics.HealthChecks" Version="7.0.9" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="GitVersion.MsBuild" Version="5.12.0">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
   </ItemGroup>
 
   <ItemGroup>

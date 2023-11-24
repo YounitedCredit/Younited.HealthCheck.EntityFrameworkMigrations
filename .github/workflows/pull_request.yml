@@ -7,7 +7,6 @@ on:
 
 env:
   BUILD_CONFIGURATION: 'Release'    # set this to the appropriate build configuration
-  DOTNET_VERSION: '8.x' 
 
 jobs:
   build:
@@ -20,9 +19,12 @@ jobs:
 
       # Setup .NET Core SDK
       - name: Setup .NET Core
-        uses: actions/setup-dotnet@v1
+        uses: actions/setup-dotnet@v3
         with:
-          dotnet-version: ${{ env.DOTNET_VERSION }}
+          dotnet-version: |
+            6.x
+            7.x
+            8.x
 
       # Run dotnet build and package
       - name: dotnet restore

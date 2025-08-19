@@ -1,5 +1,6 @@
 using Microsoft.Data.Sqlite;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Diagnostics;
 using NUnit.Framework;
 using System.Data.Common;
 using System.Linq;
@@ -21,10 +22,13 @@ namespace Younited.HealthCheck.EntityFrameworkMigrations.Tests
             _connection.Open();
 
             // Create an empty in memory sqlite DB
-            _context = new SampleDbContext(
-                new DbContextOptionsBuilder<SampleDbContext>()
-                    .UseSqlite(_connection)
-                    .Options);
+            // PendingModelChangesWarning is suppressed because this test intentionally uses SQLite
+            // against migrations generated for SQL Server — a provider mismatch that EF Core 9+ flags as an error.
+            var optionsBuilder = new DbContextOptionsBuilder<SampleDbContext>().UseSqlite(_connection);
+#if NET9_0_OR_GREATER
+            optionsBuilder.ConfigureWarnings(w => w.Ignore(RelationalEventId.PendingModelChangesWarning));
+#endif
+            _context = new SampleDbContext(optionsBuilder.Options);
         }
 
         [TearDown]

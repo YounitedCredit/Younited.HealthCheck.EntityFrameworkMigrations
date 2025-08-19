@@ -22,9 +22,9 @@ jobs:
         uses: actions/setup-dotnet@v3
         with:
           dotnet-version: |
-            6.x
-            7.x
             8.x
+            9.x
+            10.x
 
       # Run dotnet build and package
       - name: dotnet restore
@@ -50,9 +50,9 @@ jobs:
         uses: actions/setup-dotnet@v3
         with:
           dotnet-version: |
-            6.x
-            7.x
             8.x
+            9.x
+            10.x
           source-url: ${{ env.AZURE_ARTIFACTS_FEED_URL }}
         env:
           NUGET_AUTH_TOKEN: ${{ secrets.AZURE_DEVOPS_TOKEN }} 
@@ -67,6 +67,13 @@ jobs:
       - name: dotnet pack
         run: dotnet pack -c '${{ env.BUILD_CONFIGURATION }}'
 
+      # Get a short-lived NuGet API key
+      - name: NuGet login (OIDC → temp API key)
+        uses: NuGet/login@v1
+        id: login
+        with:
+          user: ${{ secrets.NUGET_USER }}
+          
       # Publish the package to Azure Artifacts
       - name: 'dotnet publish'
-        run: dotnet nuget push "**/src/Younited.HealthCheck.EntityFrameworkMigrations/bin/${{ env.BUILD_CONFIGURATION }}/*.nupkg" --api-key ${{ secrets.nuget_api_key }} --source https://api.nuget.org/v3/index.json
+        run: dotnet nuget push "**/src/Younited.HealthCheck.EntityFrameworkMigrations/bin/${{ env.BUILD_CONFIGURATION }}/*.nupkg" --api-key ${{steps.login.outputs.NUGET_API_KEY}} --source https://api.nuget.org/v3/index.json

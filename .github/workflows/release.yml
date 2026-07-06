@@ -8,6 +8,10 @@ on:
 env:
   BUILD_CONFIGURATION: 'Release'    # set this to the appropriate build configuration
 
+permissions:
+  id-token: write
+  contents: read
+
 jobs:
   build:
     runs-on: ubuntu-latest

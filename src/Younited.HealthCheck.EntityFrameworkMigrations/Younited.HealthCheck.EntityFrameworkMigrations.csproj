@@ -1,51 +1,51 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
-  <PropertyGroup>
-    <TargetFrameworks>net6.0;net7.0;net8.0</TargetFrameworks>
-    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <Authors>Younited Credit</Authors>
-    <Company>Younited Credit</Company>
-    <Description>Add a validation that all Entity Framework migrations have been executed, for a given DbContext, to a webapi healtchchecks collection.</Description>
-    <Copyright>Copyright @ Younited Credit</Copyright>
-    <PackageIconUrl></PackageIconUrl>
-    <RepositoryType>git</RepositoryType>
-    <RepositoryUrl>https://github.com/YounitedCredit/Younited.HealthCheck.EntityFrameworkMigrations</RepositoryUrl>
-    <PackageLicenseExpression>MIT</PackageLicenseExpression>
-    <PackageId>Younited.HealthCheck.EntityFrameworkMigrations</PackageId>
-    <Title>Younited.HealthCheck.EntityFrameworkMigrations</Title>
-    <PackageTags>Healthcheck;EntityFramework;EF;EFCore;netcore</PackageTags>
-    <PackageIcon>younited.png</PackageIcon>
-    <PackageProjectUrl>https://github.com/YounitedCredit/Younited.HealthCheck.EntityFrameworkMigrations</PackageProjectUrl>
-  </PropertyGroup>
+    <PropertyGroup>
+        <TargetFrameworks>net8.0;net9.0;net10.0</TargetFrameworks>
+        <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+        <Authors>Younited Credit</Authors>
+        <Company>Younited Credit</Company>
+        <Description>Add a validation that all Entity Framework migrations have been executed, for a given DbContext, to a webapi healtchchecks collection.</Description>
+        <Copyright>Copyright @ Younited Credit</Copyright>
+        <PackageIconUrl></PackageIconUrl>
+        <RepositoryType>git</RepositoryType>
+        <RepositoryUrl>https://github.com/YounitedCredit/Younited.HealthCheck.EntityFrameworkMigrations</RepositoryUrl>
+        <PackageLicenseExpression>MIT</PackageLicenseExpression>
+        <PackageId>Younited.HealthCheck.EntityFrameworkMigrations</PackageId>
+        <Title>Younited.HealthCheck.EntityFrameworkMigrations</Title>
+        <PackageTags>Healthcheck;EntityFramework;EF;EFCore;netcore</PackageTags>
+        <PackageIcon>younited.png</PackageIcon>
+        <PackageProjectUrl>https://github.com/YounitedCredit/Younited.HealthCheck.EntityFrameworkMigrations</PackageProjectUrl>
+    </PropertyGroup>
 
-  <ItemGroup Condition="'$(TargetFramework)' == 'net6.0'">
-    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="6.0.25" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="6.0.25" />
-    <PackageReference Include="Microsoft.Extensions.Diagnostics.HealthChecks" Version="6.0.25" />
-  </ItemGroup>
-  <ItemGroup Condition="'$(TargetFramework)' == 'net7.0'">
-	<PackageReference Include="Microsoft.EntityFrameworkCore" Version="7.0.14" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="7.0.14" />
-    <PackageReference Include="Microsoft.Extensions.Diagnostics.HealthChecks" Version="7.0.14" />
-  </ItemGroup>
-  <ItemGroup Condition="'$(TargetFramework)' == 'net8.0'">
-	<PackageReference Include="Microsoft.EntityFrameworkCore" Version="8.0.0" />
-	<PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="8.0.0" />
-	<PackageReference Include="Microsoft.Extensions.Diagnostics.HealthChecks" Version="8.0.0" />
-  </ItemGroup>
+    <ItemGroup Condition="'$(TargetFramework)' == 'net8.0'">
+        <PackageReference Include="Microsoft.EntityFrameworkCore" Version="8.0.1"/>
+        <PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="8.0.1"/>
+        <PackageReference Include="Microsoft.Extensions.Diagnostics.HealthChecks" Version="8.0.1"/>
+    </ItemGroup>
+    <ItemGroup Condition="'$(TargetFramework)' == 'net9.0'">
+        <PackageReference Include="Microsoft.EntityFrameworkCore" Version="9.0.0"/>
+        <PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="9.0.0"/>
+        <PackageReference Include="Microsoft.Extensions.Diagnostics.HealthChecks" Version="9.0.0"/>
+    </ItemGroup>
+    <ItemGroup Condition="'$(TargetFramework)' == 'net10.0'">
+        <PackageReference Include="Microsoft.EntityFrameworkCore" Version="10.0.0"/>
+        <PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="10.0.0"/>
+        <PackageReference Include="Microsoft.Extensions.Diagnostics.HealthChecks" Version="10.0.0"/>
+    </ItemGroup>
 
-  <ItemGroup>
-    <PackageReference Include="GitVersion.MsBuild" Version="5.12.0">
-      <PrivateAssets>all</PrivateAssets>
-      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-    </PackageReference>
-  </ItemGroup>
+    <ItemGroup>
+        <PackageReference Include="GitVersion.MsBuild" Version="6.8.1">
+            <PrivateAssets>all</PrivateAssets>
+            <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+        </PackageReference>
+    </ItemGroup>
 
-  <ItemGroup>
-    <None Include="..\..\build\younited.png">
-      <Pack>True</Pack>
-      <PackagePath></PackagePath>
-    </None>
-  </ItemGroup>
+    <ItemGroup>
+        <None Include="..\..\build\younited.png">
+            <Pack>True</Pack>
+            <PackagePath></PackagePath>
+        </None>
+    </ItemGroup>
 
 </Project>
